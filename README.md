@@ -29,7 +29,7 @@ cp config.example.toml config.toml
 ./x build library
 ./x build --stage 2 compiler/rustc
 ./x build --target x86_64-unknown-linux-gnu,mips-zkm-zkvm-elf
-./x install --target x86_64-unknown-linux-gnu,mips-zkm-zkvm-elf
+BOOTSTRAP_SKIP_TARGET_SANITY=1 ./x install --target x86_64-unknown-linux-gnu,mips-zkm-zkvm-elf
 ```
 
 ### Build/Install cargo

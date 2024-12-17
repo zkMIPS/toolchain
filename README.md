@@ -24,6 +24,8 @@ cp config.example.toml config.toml
       docs = false
     [rust]
       lld = true
+    [llvm]
+      download-ci-llvm = false
 ./x build library
 ./x build --stage 2 compiler/rustc
 ./x build --target x86_64-unknown-linux-gnu,mips-zkm-zkvm-elf

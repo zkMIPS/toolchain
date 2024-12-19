@@ -11,6 +11,7 @@ trap cleanup EXIT
 
 setpath() {
 	local newpath=`readlink -f ~/.zkm-toolchain/$1/bin`
+	echo "export PATH=$newpath:\$PATH" > ~/.zkm-toolchain/env
 	local q=`readlink -f ~/.zkm-toolchain/`
 	split_path=`echo $PATH | sed 's/:/ /g'`
 	for e in ${split_path};do
@@ -72,10 +73,14 @@ if [ ! -d "$dir" ] || [ "$reinstall" = "yes" ] ;then
 	echo "Downloading... $pkg ..."
 	wget -c https://github.com/zkMIPS/toolchain/releases/download/$rel/$pkg -O ~/.zkm-toolchain/$pkg
 	tar xf $pkg
+
 fi
 
 if [ -d "$dir" ]; then
 	setpath $dir
+	echo "'\033[0;31m~/.zkm-toolcain/env\033[0m' created. Now you can add"
+	echo "\033[0;32m     . ~/.zkm-toolchain/env\033[0m"
+	echo "to your .bashrc/.zshrc/.profile to use zkMIPS toolchain"
 	echo "Starting a new shell session..."
 	cd ${origin_dir}
 	$SHELL

@@ -78,10 +78,11 @@ fi
 
 if [ -d "$dir" ]; then
 	setpath $dir
-	echo "'\033[0;31m~/.zkm-toolcain/env\033[0m' created. Now you can add"
-	echo "\033[0;32m     . ~/.zkm-toolchain/env\033[0m"
-	echo "to your .bashrc/.zshrc/.profile to use zkMIPS toolchain"
-	echo "Starting a new shell session..."
+	echo -e "'\033[0;31m~/.zkm-toolcain/env\033[0m' created. Now you can add"
+	echo -e "\033[0;32m     . ~/.zkm-toolchain/env\033[0m"
+	echo -e "to your .bashrc/.zshrc/.profile to use zkMIPS toolchain"
+	echo -e "Starting a new shell session..."
 	cd ${origin_dir}
 	$SHELL
 fi
+ 

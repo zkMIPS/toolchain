@@ -22,3 +22,10 @@ if [ -d cargo ];then
 else
 	git clone https://github.com/rust-lang/cargo.git
 fi
+
+if [ -d zkm ];then
+	git -C zkm checkout
+	git -C zkm pull --rebase
+else
+	git clone https://github.com/zkMIPS/zkm.git
+fi

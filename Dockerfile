@@ -3,7 +3,10 @@ FROM rockylinux/rockylinux:9 AS fetcher
 RUN \
   useradd --create-home -u 50000 -G 100 jenkins
 RUN \
-  dnf install -y git
+  dnf install -y 'dnf-command(config-manager)' && \
+  dnf config-manager --set-enabled crb
+RUN \
+  dnf install -y git gcc-c++ cmake ninja-build openssl-devel
 
 USER jenkins
 

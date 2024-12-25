@@ -2,6 +2,8 @@ FROM rockylinux/rockylinux:9 AS fetcher
 
 RUN \
   useradd --create-home -u 50000 -G 100 jenkins
+RUN \
+  dnf install -y git
 
 USER jenkins
 

@@ -76,12 +76,18 @@ if [ ! -d "$dir" ] || [ "$reinstall" = "yes" ] ;then
 
 fi
 
+echo_e=`echo -e`
+echo_e_opt=-e
+if [ "$echo_e" = "-e" ];then
+	echo_e_opt=
+fi
+
 if [ -d "$dir" ]; then
 	setpath $dir
-	/bin/echo -e "'\033[0;31m~/.zkm-toolcain/env\033[0m' created. Now you can add"
-	/bin/echo -e "\033[0;32m     . ~/.zkm-toolchain/env\033[0m"
-	/bin/echo -e "to your .bashrc/.zshrc/.profile to use zkMIPS toolchain"
-	/bin/echo -e "Starting a new shell session..."
+	echo ${echo_e_opt} "'\033[0;31m~/.zkm-toolcain/env\033[0m' created. Now you can add"
+	echo ${echo_e_opt} "\033[0;32m     . ~/.zkm-toolchain/env\033[0m"
+	echo ${echo_e_opt} "to your .bashrc/.zshrc/.profile to use zkMIPS toolchain"
+	echo ${echo_e_opt} "Starting a new shell session..."
 	cd ${origin_dir}
 	$SHELL
 fi

@@ -3,6 +3,8 @@
 . "$HOME/.cargo/env"
 CWD=`pwd`
 
+rm -rf $CWD/rust-staged
+
 cd $CWD/rust-workspace
 ./x build library
 ./x build --stage 2 compiler/rustc

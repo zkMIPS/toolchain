@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ -d rust-workspace ];then
-	git -C rust-workspace checkout
+	git -C rust-workspace checkout .
 	git -C rust-workspace pull --rebase
 else
 	git clone https://github.com/zkMIPS/rust-workspace.git
@@ -17,14 +17,14 @@ sed -i 's@#download-ci-llvm = .*@download-ci-llvm = false@' rust-workspace/confi
 
 
 if [ -d cargo ];then
-	git -C cargo checkout
+	git -C cargo checkout .
 	git -C cargo pull --rebase
 else
 	git clone https://github.com/rust-lang/cargo.git
 fi
 
 if [ -d zkm ];then
-	git -C zkm checkout
+	git -C zkm checkout .
 	git -C zkm pull --rebase
 else
 	git clone https://github.com/zkMIPS/zkm.git

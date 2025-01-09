@@ -42,6 +42,14 @@ for i in $@;do
 	fi
 done
 
+if [ "$update" = "yes" ];then
+	rel=`curl -s https://api.github.com/repos/zkMIPS/toolchain/releases | grep '"tag_name":' | sed 's/[^0-9]*//g' | sort -r | head -1`
+	if [ -z "$rel" ];then
+		echo "Failed to get release list from github"
+		exit 1
+	fi
+fi
+
 if [ "${os}-${cpu}" = "Linux-aarch64" ];then
 	pkg="${pkg}-aarch64-unknown-linux-gnu-${rel}.tar.xz"
 elif [ "${os}-${cpu}" = "Linux-x86_64" ];then
@@ -54,14 +62,6 @@ else
 	echo -n "Unsupported Platform: "
 	uname -a
 	exit 1
-fi
-
-if [ "update" = "yes" ];then
-	rel=`curl -s https://api.github.com/repos/zkMIPS/toolchain/releases | grep "tag_name:" | sed 's/[^0-9]*//g' | sort -r | head -1`
-	if [ -z "$rel" ];then
-		echo "Failed to get release list from github"
-		exit 1
-	fi
 fi
 
 dir=`echo $pkg | sed 's/.tar.*//'`

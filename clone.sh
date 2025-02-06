@@ -7,6 +7,8 @@ else
 	git clone https://github.com/zkMIPS/rust-workspace.git
 fi
 git -C rust-workspace checkout Triple_mips-zkm-zkvm-elf
+git -C rust-workspace submodule update --init --recursive
+
 sed -i 's@^cc =.*@cc = { git = "https://github.com/zkMIPS/cc-rs.git", branch = "Triple_mips-zkm-zkvm-elf" }@' rust-workspace/src/bootstrap/Cargo.toml
 cp -f rust-workspace/config.example.toml rust-workspace/config.toml
 sed -i 's@#prefix = .*@prefix = "/var/jenkins_home/workspace/rust-toolchain/rust-staged"@' rust-workspace/config.toml

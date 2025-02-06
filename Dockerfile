@@ -6,7 +6,7 @@ RUN \
   dnf install -y 'dnf-command(config-manager)' && \
   dnf config-manager --set-enabled crb
 RUN \
-  dnf install -y git gcc-c++ cmake ninja-build openssl-devel zstd xz
+  dnf install -y git gcc-c++ cmake ninja-build openssl-devel zstd xz gcc
 
 USER jenkins
 

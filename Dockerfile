@@ -4,9 +4,10 @@ RUN \
   useradd --create-home -u 50000 -G 100 jenkins
 RUN \
   dnf install -y 'dnf-command(config-manager)' && \
-  dnf config-manager --set-enabled crb
+  dnf config-manager --set-enabled crb && \
+  dnf install -y epel-release
 RUN \
-  dnf install -y git gcc-c++ cmake ninja-build openssl-devel zstd xz gcc
+  dnf install -y git gcc-c++ cmake ninja-build openssl-devel zstd xz patchelf
 
 USER jenkins
 

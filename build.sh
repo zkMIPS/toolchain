@@ -7,6 +7,7 @@ TARGET=`rustc -vV | sed -n 's|host: ||p'`
 rm -rf $CWD/rust-staged
 
 cd $CWD/rust-workspace
+rm -rf build
 ./x build library
 ./x build --stage 2 compiler/rustc
 BOOTSTRAP_SKIP_TARGET_SANITY=1 ./x build --target ${TARGET},mips-zkm-zkvm-elf,mipsel-zkm-zkvm-elf

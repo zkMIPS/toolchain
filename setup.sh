@@ -67,7 +67,7 @@ fi
 dir=`echo $pkg | sed 's/.tar.*//'`
 if [ ! -d "$dir" ] || [ "$reinstall" = "yes" ] ;then
 	if [ -e "$dir" ] && [ ! -d "$dir" ];then
-		echo "Error: $dir exists, while is not a diretory"
+		echo "Error: $dir exists, while is not a directory"
 		exit 1
 	fi
 	echo "Downloading... $pkg ..."

@@ -30,7 +30,7 @@ cpu=`uname -m`
 reinstall=no
 update=no
 pkg="rust-toolchain"
-rel=20250108
+rel=20250224
 for i in $@;do
 	if [ "$i" = "--reinstall" ];then
 		reinstall=yes

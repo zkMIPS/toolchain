@@ -6,10 +6,14 @@ if [ -d rust-workspace ];then
 else
 	git clone https://github.com/zkMIPS/rust-workspace.git
 fi
+
+sed -i 's@rust-lang/llvm-project.git@zkMIPS/llvm-project.git@' rust-workspace/.gitmodules
+sed -i 's@= rustc/20.1-2025-02-13@= zkm-rustc/20.1-2025-02-13@' rust-workspace/.gitmodules
 git -C rust-workspace checkout Triple_mips-zkm-zkvm-elf
 git -C rust-workspace submodule update --init --recursive
 
 sed -i 's/mips2/mips32r2/g' rust-workspace/compiler/rustc_target/src/spec/targets/mips*_zkm_zkvm_elf.rs
+sed -i 's/+mips32r2,/+mips32r2,+inst-same-cost,/g' rust-workspace/compiler/rustc_target/src/spec/targets/mips*_zkm_zkvm_elf.rs
 
 sed -i 's@^cc =.*@cc = { git = "https://github.com/zkMIPS/cc-rs.git", branch = "Triple_mips-zkm-zkvm-elf" }@' rust-workspace/src/bootstrap/Cargo.toml
 cp -f rust-workspace/config.example.toml rust-workspace/config.toml

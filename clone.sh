@@ -35,8 +35,8 @@ fi
 
 if [ -d zkm ];then
 	git -C zkm checkout .
+	git -C zkm clean -fd
 	git -C zkm pull --rebase
 else
 	git clone https://github.com/zkMIPS/zkm.git
 fi
-sed -i 's/mips2/mips32r2/g' zkm/build/src/command/utils.rs

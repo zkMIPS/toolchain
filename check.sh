@@ -8,4 +8,4 @@ ARGS="711e9609339e92b03ddc0a211827dba421f38f9ed8b9d806e1ffdd8c15ffa03d world!" R
 
 cd $CWD
 cd zkm/prover/examples/revme/host
-RUST_LOG=info JSON_PATH=../../../../emulator/test-vectors/test.json SEG_OUTPUT=/tmp/output SEG_SIZE=262144 cargo run --release
+RUST_LOG=info SEG_OUTPUT=/tmp/output cargo run --release

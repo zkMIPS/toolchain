@@ -19,11 +19,11 @@ git -C rust-workspace submodule update --init --recursive
 
 #sed -i 's@^cc =.*@cc = { git = "https://github.com/zkMIPS/cc-rs.git", branch = "Triple_mips-zkm-zkvm-elf" }@' rust-workspace/src/bootstrap/Cargo.toml
 cp -f rust-workspace/bootstrap.example.toml rust-workspace/bootstrap.toml
-sed -i "s@#prefix = .*@prefix = \"$CWD/rust-staged\"@" rust-workspace/bootstrap.toml
-sed -i 's@#sysconfdir = .*@sysconfdir = "etc"@' rust-workspace/bootstrap.toml
-sed -i 's@#docs = .*@docs = false@' rust-workspace/bootstrap.toml
-sed -i 's@#lld = .*@lld = true@' rust-workspace/bootstrap.toml
-sed -i 's@#download-ci-llvm = .*@download-ci-llvm = false@' rust-workspace/bootstrap.toml
+sed -i.backup "s@#prefix = .*@prefix = \"$CWD/rust-staged\"@" rust-workspace/bootstrap.toml
+sed -i.backup 's@#sysconfdir = .*@sysconfdir = "etc"@' rust-workspace/bootstrap.toml
+sed -i.backup 's@#docs = .*@docs = false@' rust-workspace/bootstrap.toml
+sed -i.backup 's@#lld = .*@lld = true@' rust-workspace/bootstrap.toml
+sed -i.backup 's@#download-ci-llvm = .*@download-ci-llvm = false@' rust-workspace/bootstrap.toml
 
 
 if [ -d cargo ];then

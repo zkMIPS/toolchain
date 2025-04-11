@@ -7,7 +7,9 @@ TARGET=`rustc -vV | sed -n 's|host: ||p'`
 rm -rf $CWD/rust-staged
 
 cd $CWD/rust-workspace
-rm -rf build
+for i in `ls -d build/* | grep -v '^build/cache'`;do
+        rm -rf $i
+done
 ./x build library
 ./x build --stage 2 compiler/rustc
 BOOTSTRAP_SKIP_TARGET_SANITY=1 ./x build --target ${TARGET},mips-zkm-zkvm-elf,mipsel-zkm-zkvm-elf
@@ -20,3 +22,16 @@ cargo install --path . --root=$CWD/rust-staged
 
 patchelf --set-rpath '$ORIGIN/../lib' $CWD/rust-staged/bin/cargo
 cp -f /usr/lib64/libcrypto.so.3* /usr/lib64/libssl.so.3* $CWD/rust-staged/lib
+
+cd $CWD
+echo "Rustc:"
+git -C rust-workspace log -1 > $CWD/rust-staged/buildinfo
+echo >> $CWD/rust-staged/buildinfo
+
+echo "LLVM:"
+git -C rust-workspace/src/llvm-project log -1 > $CWD/rust-staged/buildinfo
+echo >> $CWD/rust-staged/buildinfo
+
+echo "Cargo:"
+git -C cargo log -1 > $CWD/rust-staged/buildinfo
+echo >> $CWD/rust-staged/buildinfo

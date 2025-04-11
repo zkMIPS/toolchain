@@ -14,6 +14,7 @@ pipeline {
         stage('Tarball') {
             steps {
 		sh 'tar cJvf rust-staged.tar.xz rust-staged'
+		sh 'sh -x tarball.sh'
             }
         }
         stage('Check') {

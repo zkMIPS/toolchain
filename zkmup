@@ -5,7 +5,7 @@ mkdir -p ~/.zkm-toolchain
 cd ~/.zkm-toolchain
 
 list_available() {
-	rel=`curl -s https://api.github.com/repos/zkMIPS/toolchain/releases | grep '"tag_name":' | sed 's/[^0-9]*//g' | sort -r`
+	rel=`curl -s https://api.github.com/repos/zkMIPS/toolchain/releases | grep '"tag_name": "[0-9]*"' | sed 's/[^0-9]*//g' | sort -r`
 	if [ -z "$rel" ];then
 		echo "No avaible toolchain to download"
 		echo "Please check you network"
@@ -15,7 +15,7 @@ list_available() {
 }
 
 get_last_version() {
-	rel=`curl -s https://api.github.com/repos/zkMIPS/toolchain/releases | grep '"tag_name":' | sed 's/[^0-9]*//g' | sort -r | head -1`
+	rel=`curl -s https://api.github.com/repos/zkMIPS/toolchain/releases | grep '"tag_name": "[0-9]*"' | sed 's/[^0-9]*//g' | sort -r | head -1`
 	if [ -z "$rel" ];then
 		echo "No avaible toolchain to download"
 		echo "Please check you network"

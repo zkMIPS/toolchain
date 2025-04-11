@@ -13,7 +13,7 @@ rm -rf rust-toolchain-*
 cp -r rust-staged rust-toolchain-${TARGET}-${TAG}
 MacOS=`echo ${TARGET} | grep apple`
 if [ -n "$MacOS" ];then
-	tar cjvf rust-toolchain-${TARGET}-${TAG}.tar.bz2
+	tar cjvf rust-toolchain-${TARGET}-${TAG}.tar.bz2 rust-toolchain-${TARGET}-${TAG}
 else
-	tar cJvf rust-toolchain-${TARGET}-${TAG}.tar.xz
+	tar cJvf rust-toolchain-${TARGET}-${TAG}.tar.xz rust-toolchain-${TARGET}-${TAG}
 fi

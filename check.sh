@@ -34,3 +34,73 @@ cd zkm/prover/examples/split-seg
 BASEDIR=../../../emulator/test-vectors RUST_LOG=info ELF_PATH=../../../emulator/test-vectors/minigeth BLOCK_NO=13284491 SEG_OUTPUT=/tmp/output SEG_SIZE=65536 ARGS="" cargo run --release
 BASEDIR=../../../emulator/test-vectors RUST_LOG=info ELF_PATH=../../../emulator/test-vectors/minigeth BLOCK_NO=13284491 SEG_OUTPUT=/tmp/output SEG_START_ID=0 SEG_NUM=1 SEG_SIZE=65536 cargo run --release
 BASEDIR=../../../emulator/test-vectors RUST_LOG=info ELF_PATH=../../../emulator/test-vectors/minigeth BLOCK_NO=13284491 SEG_OUTPUT=/tmp/output SEG_START_ID=0 SEG_NUM=299 SEG_SIZE=65536 cargo run --release
+
+
+
+cd $CWD
+cd zkMIPS/examples/aggregation/host
+RUST_LOG=info cargo run --release
+
+cd $CWD
+cd zkMIPS/examples/bn254/host
+RUST_LOG=info cargo run --release
+
+cd $CWD
+cd zkMIPS/examples/chess/host
+RUST_LOG=info cargo run --release
+
+cd $CWD
+cd zkMIPS/examples/cycle-tracking/host
+RUST_LOG=info cargo run --release
+
+cd $CWD
+cd zkMIPS/examples/fibonacci/host
+RUST_LOG=info cargo run --release
+
+cd $CWD
+#cd zkMIPS/examples/fibonacci_c_lib/host
+#RUST_LOG=info cargo run --release
+
+cd $CWD
+cd zkMIPS/examples/groth16/host
+RUST_LOG=info cargo run --release
+
+cd $CWD
+cd zkMIPS/examples/groth16/host
+RUST_LOG=info cargo run --release
+
+cd $CWD
+cd zkMIPS/examples/is-prime/host
+RUST_LOG=info cargo run --release
+
+cd $CWD
+cd zkMIPS/examples/json/host
+RUST_LOG=info cargo run --release
+
+cd $CWD # FAILED: assertion `left == right` failed
+#cd zkMIPS/examples/keccak-precompile/host
+#RUST_LOG=info cargo run --release
+
+cd $CWD
+cd zkMIPS/examples/plonk/host
+RUST_LOG=info cargo run --release
+
+cd $CWD
+cd zkMIPS/examples/regex/host
+RUST_LOG=info cargo run --release
+
+cd $CWD
+cd zkMIPS/examples/rsa/host
+RUST_LOG=info cargo run --release
+
+cd $CWD
+cd zkMIPS/examples/ssz-withdrawals/host
+RUST_LOG=info cargo run --release
+
+cd $CWD
+cd zkMIPS/examples/tendermint/host
+RUST_LOG=info cargo run --release
+
+cd $CWD
+cd zkMIPS/examples/unconstrained/host
+RUST_LOG=info cargo run --release

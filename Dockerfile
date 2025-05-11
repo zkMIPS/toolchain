@@ -7,7 +7,8 @@ RUN \
   dnf config-manager --set-enabled crb && \
   dnf install -y epel-release
 RUN \
-  dnf install -y git gcc-c++ cmake ninja-build openssl-devel zstd xz patchelf zlib-devel protobuf-compiler golang
+  dnf install -y git gcc-c++ cmake ninja-build openssl-devel zstd xz patchelf zlib-devel \
+		protobuf-compiler golang clang-devel ccache
 
 USER jenkins
 

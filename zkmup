@@ -164,7 +164,9 @@ if [ "$subcom" = "setup" ];then
 fi
 
 if [ "$subcom" = "selfupdate" ];then
-	wget -q https://raw.githubusercontent.com/zkMIPS/toolchain/refs/heads/main/zkmup -o $cmd
+	abs=`readlink -f $cmd`
+	wget -q https://raw.githubusercontent.com/zkMIPS/toolchain/refs/heads/main/zkmup -O $abs
+	chmod +x $abs
 	exit 0
 fi
 

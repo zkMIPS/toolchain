@@ -17,6 +17,8 @@ BOOTSTRAP_SKIP_TARGET_SANITY=1 ./x install --target ${TARGET},mips-zkm-zkvm-elf,
 
 
 cd $CWD/cargo
+cargo --version
+cargo clean
 cargo build --release
 cargo install --path . --root=$CWD/rust-staged
 

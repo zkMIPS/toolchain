@@ -2,6 +2,10 @@
 
 CWD=`pwd`
 
+. "$HOME/.cargo/env"
+RUSTUP_PERMIT_COPY_RENAME=true rustup toolchain install nightly
+RUSTUP_PERMIT_COPY_RENAME=true rustup default nightly
+
 if [ -d rust-workspace ];then
 	git -C rust-workspace checkout .
 	git -C rust-workspace pull --rebase

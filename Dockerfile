@@ -19,6 +19,7 @@ RUN \
   rustup toolchain install nightly && \
   rustup default nightly
 
+
 WORKDIR /directory
 
 CMD ["bash"]

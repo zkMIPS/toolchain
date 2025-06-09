@@ -2,6 +2,8 @@
 
 CWD=`pwd`
 export PATH=${CWD}/rust-staged/bin:$PATH
+cargo --version
+rustc --version
 
 ## FAIL due to ring 0.16.20 too old
 #cd $CWD

@@ -39,7 +39,7 @@ fi
 
 if [ -d zkm ];then
 	git -C zkm checkout .
-	git -C zkm clean -fd
+	git -C zkm clean -fdx
 	git -C zkm pull --rebase
 else
 	git clone https://github.com/zkMIPS/zkm.git
@@ -47,7 +47,7 @@ fi
 
 if [ -d zkMIPS ];then
 	git -C zkMIPS checkout .
-	git -C zkMIPS clean -fd
+	git -C zkMIPS clean -fdx
 	git -C zkMIPS pull --rebase
 else
 	git clone https://github.com/zkMIPS/zkMIPS.git

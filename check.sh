@@ -130,3 +130,8 @@ cd $CWD
 cd zkMIPS/examples/unconstrained/host
 cargo clean
 RUST_LOG=info cargo run --release
+
+cd $CWD
+cd zkvm-benchmarks/zkm2
+cargo clean
+RUSTFLAGS="-C target-cpu=native" cargo run -r --bin modpow

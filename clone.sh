@@ -32,6 +32,7 @@ sed -i.backup 's@#download-ci-llvm = .*@download-ci-llvm = false@' rust-workspac
 
 if [ -d cargo ];then
 	git -C cargo checkout .
+	git -C cargo clean -fdx
 	git -C cargo pull --rebase
 else
 	git clone https://github.com/rust-lang/cargo.git
@@ -51,4 +52,12 @@ if [ -d zkMIPS ];then
 	git -C zkMIPS pull --rebase
 else
 	git clone https://github.com/zkMIPS/zkMIPS.git
+fi
+
+if [ -d zkvm-benchmarks ];then
+	git -C zkvm-benchmarks checkout .
+	git -C zkvm-benchmarks clean -fdx
+	git -C zkvm-benchmarks pull --rebase
+else
+	git clone https://github.com/zkMIPS/zkvm-benchmarks.git
 fi

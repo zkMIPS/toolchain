@@ -38,6 +38,14 @@ else
 	git clone https://github.com/rust-lang/cargo.git
 fi
 
+if [ -d rust-clippy ];then
+	git -C rust-clippy checkout .
+	git -C rust-clippy clean -fdx
+	git -C rust-clippy pull --rebase
+else
+	git clone https://github.com/rust-lang/rust-clippy.git
+fi
+
 if [ -d zkm ];then
 	git -C zkm checkout .
 	git -C zkm clean -fdx

@@ -12,7 +12,7 @@ rustup default nightly
 ### Build/Install rustc
 
 ```
-git clone https://github.com/zkMIPS/rust-workspace.git
+git clone https://github.com/ProjectZKM/rust-workspace.git
 cd rust-workspace
 git checkout Triple_mips-zkm-zkvm-elf
 cp config.example.toml config.toml
@@ -46,5 +46,5 @@ cargo install --path . --root=/home/USERNAME/rust-staged/
 
 # Howto install binary
 ```
-curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/zkMIPS/toolchain/refs/heads/main/setup.sh | sh
+curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/ProjectZKM/toolchain/refs/heads/main/setup.sh | sh
 ```

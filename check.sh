@@ -47,87 +47,87 @@ BASEDIR=../../../emulator/test-vectors RUST_LOG=info ELF_PATH=../../../emulator/
 
 
 cd $CWD
-cd zkMIPS/examples/aggregation/host
+cd Ziren/examples/aggregation/host
 cargo clean
 RUST_LOG=info cargo run --release
 
 cd $CWD
-cd zkMIPS/examples/bn254/host
+cd Ziren/examples/bn254/host
 cargo clean
 RUST_LOG=info cargo run --release
 
 cd $CWD
-cd zkMIPS/examples/chess/host
+cd Ziren/examples/chess/host
 cargo clean
 RUST_LOG=info cargo run --release
 
 cd $CWD
-cd zkMIPS/examples/cycle-tracking/host
+cd Ziren/examples/cycle-tracking/host
 cargo clean
 RUST_LOG=info cargo run --release
 
 cd $CWD
-cd zkMIPS/examples/fibonacci/host
+cd Ziren/examples/fibonacci/host
 cargo clean
 RUST_LOG=info cargo run --release
 
 cd $CWD
-#cd zkMIPS/examples/fibonacci_c_lib/host
+#cd Ziren/examples/fibonacci_c_lib/host
 #cargo clean
 #RUST_LOG=info cargo run --release
 
 cd $CWD
-cd zkMIPS/examples/groth16/host
+cd Ziren/examples/groth16/host
 cargo clean
 RUST_LOG=info cargo run --release
 
 cd $CWD
-cd zkMIPS/examples/groth16/host
+cd Ziren/examples/groth16/host
 cargo clean
 RUST_LOG=info cargo run --release
 
 cd $CWD
-cd zkMIPS/examples/is-prime/host
+cd Ziren/examples/is-prime/host
 cargo clean
 RUST_LOG=info cargo run --release
 
 cd $CWD
-cd zkMIPS/examples/json/host
+cd Ziren/examples/json/host
 cargo clean
 RUST_LOG=info cargo run --release
 
 cd $CWD # FAILED: assertion `left == right` failed
-#cd zkMIPS/examples/keccak-precompile/host
+#cd Ziren/examples/keccak-precompile/host
 #cargo clean
 #RUST_LOG=info cargo run --release
 
 cd $CWD
-cd zkMIPS/examples/plonk/host
+cd Ziren/examples/plonk/host
 cargo clean
 RUST_LOG=info cargo run --release
 
 cd $CWD
-cd zkMIPS/examples/regex/host
+cd Ziren/examples/regex/host
 cargo clean
 RUST_LOG=info cargo run --release
 
 cd $CWD
-cd zkMIPS/examples/rsa/host
+cd Ziren/examples/rsa/host
 cargo clean
 RUST_LOG=info cargo run --release
 
 cd $CWD
-cd zkMIPS/examples/ssz-withdrawals/host
+cd Ziren/examples/ssz-withdrawals/host
 cargo clean
 RUST_LOG=info cargo run --release
 
 cd $CWD
-cd zkMIPS/examples/tendermint/host
+cd Ziren/examples/tendermint/host
 cargo clean
 RUST_LOG=info cargo run --release
 
 cd $CWD
-cd zkMIPS/examples/unconstrained/host
+cd Ziren/examples/unconstrained/host
 cargo clean
 RUST_LOG=info cargo run --release
 
@@ -135,3 +135,8 @@ cd $CWD
 cd zkvm-benchmarks/zkm2
 cargo clean
 RUSTFLAGS="-C target-cpu=native" cargo run -r --bin modpow
+
+cd $CWD
+cd zkvm-benchmarks/zkm2
+cargo clean
+RUSTFLAGS="-C target-cpu=native" cargo run -r --bin sha3

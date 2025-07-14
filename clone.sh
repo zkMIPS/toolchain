@@ -7,6 +7,7 @@ RUSTUP_PERMIT_COPY_RENAME=true rustup toolchain install nightly
 RUSTUP_PERMIT_COPY_RENAME=true rustup default nightly
 
 if [ -d rust-workspace ];then
+	rm -rf rust-workspace/library/stdarch
 	git -C rust-workspace checkout .
 	git -C rust-workspace pull --rebase
 else

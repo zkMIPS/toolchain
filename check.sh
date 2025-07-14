@@ -132,11 +132,11 @@ cargo clean
 RUST_LOG=info cargo run --release
 
 cd $CWD
-cd zkvm-benchmarks/zkm2
+cd zkvm-benchmarks/ziren
 cargo clean
 RUSTFLAGS="-C target-cpu=native" cargo run -r --bin modpow
 
 cd $CWD
-cd zkvm-benchmarks/zkm2
+cd zkvm-benchmarks/ziren
 cargo clean
 RUSTFLAGS="-C target-cpu=native" cargo run -r --bin sha3
